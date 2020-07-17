@@ -18,7 +18,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		)
 public class TestRunner extends AbstractTestNGCucumberTests{
 
-	public static WebDriver driver;
+	public static WebDriver driver = null;
 
 	@BeforeTest
 	public void createSession(ITestContext context) {

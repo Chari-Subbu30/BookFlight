@@ -8,13 +8,13 @@ import com.runners.TestRunner;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class ResultsPage_StepDefinition {
+public class ResultsPage_StepDefinition extends TestRunner{
 	
 	static SearchResultPage searchResults = null;
 	
 	static
 	{
-		searchResults = PageFactory.initElements(TestRunner.driver, SearchResultPage.class);
+		searchResults = PageFactory.initElements(driver, SearchResultPage.class);
 	}
 	
 	@Then("^Get the fares$")
@@ -26,5 +26,4 @@ public class ResultsPage_StepDefinition {
 	public void selects_best_itinerary() throws Throwable {
 		searchResults.selectBestItinerary();
 	}
-
 }

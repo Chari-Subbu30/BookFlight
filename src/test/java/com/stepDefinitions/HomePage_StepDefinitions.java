@@ -1,26 +1,23 @@
 package com.stepDefinitions;
 
 import org.openqa.selenium.support.PageFactory;
-
-import com.booking.constants.Constants;
 import com.bookings.pages.Home_Page;
 import com.runners.TestRunner;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
-public class HomePage_StepDefinitions {
+public class HomePage_StepDefinitions extends TestRunner{
 
 	static Home_Page HomePage = null;
 
 	static
 	{
-		HomePage = PageFactory.initElements(TestRunner.driver, Home_Page.class);
+		HomePage = PageFactory.initElements(driver, Home_Page.class);
 	}
 
 	@Given("^Navigate to flight booking portal$")
 	public void navigate_to_flight_booking_portal() throws Throwable {
-		TestRunner.driver.get(Constants.FLIGHT_BOOKING_PORTAL);
-		Thread.sleep(10000);
+		HomePage.launchPortal();
 	}
 
 	@When("^User enters from city \"([^\"]*)\"$")

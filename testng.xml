@@ -6,9 +6,9 @@
 			<class name="com.runners.TestRunner" />
 		</classes>
 	</test>
-	<!-- <test name="Safari">
+	<test name="Safari">
 		<classes>
 			<class name="com.runners.TestRunner" />
 		</classes>
-	</test> -->
+	</test>
 </suite> 

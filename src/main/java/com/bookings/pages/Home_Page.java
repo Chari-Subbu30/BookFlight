@@ -6,10 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.booking.constants.Constants;
 
 public class Home_Page {
 
 	final WebDriver driver;
+
+	@FindBy(how = How.XPATH, using = "//div[starts-with(@class,'autopop__wrap')]")
+	public WebElement signup;
 
 	@FindBy(how = How.XPATH, using = "//li[@data-cy='account']")
 	public WebElement login_account;
@@ -46,13 +53,22 @@ public class Home_Page {
 		this.driver = driver;
 	}
 
+	public void launchPortal()
+	{
+		driver.get(Constants.FLIGHT_BOOKING_PORTAL);
+	}
+
 	public void source(String from)
 	{
-		login_account.click();
+		try {
+			WebDriverWait wait = new WebDriverWait(driver,20);
+			wait.until(ExpectedConditions.visibilityOf(signup));
+			login_account.click();
+		}catch(Exception e) {}
 		flights_Menu.click();
 		from_source.click();
 		textbox_from.sendKeys(from);
-		try {Thread.sleep(5000);} catch (InterruptedException e) {e.printStackTrace();}
+		try {Thread.sleep(10000);} catch (InterruptedException e) {e.printStackTrace();}
 		cities.get(0).click();
 	}
 
@@ -62,7 +78,7 @@ public class Home_Page {
 			to_destination.click();
 		}catch(Exception e) {System.out.println("Some times here getting exception");}
 		textbox_destination.sendKeys(destination);
-		try {Thread.sleep(5000);} catch (InterruptedException e) {e.printStackTrace();}
+		try {Thread.sleep(10000);} catch (InterruptedException e) {e.printStackTrace();}
 		cities.get(0).click();
 		try {
 			defaurture_datePicker.click();
