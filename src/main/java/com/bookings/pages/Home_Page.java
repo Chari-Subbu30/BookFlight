@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,7 +14,7 @@ import com.booking.constants.Constants;
 
 public class Home_Page {
 
-    WebDriver driver;
+	WebDriver driver;
 
 	@FindBy(how = How.XPATH, using = "//div[starts-with(@class,'autopop__wrap')]")
 	public WebElement signup;
@@ -51,6 +52,7 @@ public class Home_Page {
 	public Home_Page(WebDriver driver)
 	{
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	public void launchPortal()

@@ -1,19 +1,15 @@
 package com.stepDefinitions;
 
-import org.openqa.selenium.support.PageFactory;
+
 import com.bookings.pages.Home_Page;
-import com.runners.TestListener;
+import com.runners.TestRunner;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
-public class HomePage_StepDefinitions{
+public class HomePage_StepDefinitions extends TestRunner{
 
-	static Home_Page HomePage = null;
-
-	static
-	{
-		HomePage = PageFactory.initElements(TestListener.dynamicDriver.get(), Home_Page.class);
-	}
+	Home_Page HomePage = new Home_Page(driver);
 
 	@Given("^Navigate to flight booking portal$")
 	public void navigate_to_flight_booking_portal() throws Throwable {

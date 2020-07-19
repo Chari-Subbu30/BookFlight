@@ -25,7 +25,6 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 		String browserName = context.getName();
 		driver = BrowserFactory.getBrowser(browserName);
 		driver.manage().window().maximize();
-		TestListener.dynamicDriver.set(driver);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
