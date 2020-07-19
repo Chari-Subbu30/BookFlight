@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchResultPage {
 
-	final WebDriver driver;
+	WebDriver driver;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='fli-intl-lhs pull-left']/div/div")
 	public List<WebElement> flight_vendors;

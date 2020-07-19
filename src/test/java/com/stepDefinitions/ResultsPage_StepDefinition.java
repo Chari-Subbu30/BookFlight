@@ -3,18 +3,18 @@ package com.stepDefinitions;
 import org.openqa.selenium.support.PageFactory;
 
 import com.bookings.pages.SearchResultPage;
-import com.runners.TestRunner;
+import com.runners.TestListener;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class ResultsPage_StepDefinition extends TestRunner{
+public class ResultsPage_StepDefinition{
 	
 	static SearchResultPage searchResults = null;
 	
 	static
 	{
-		searchResults = PageFactory.initElements(driver, SearchResultPage.class);
+		searchResults = PageFactory.initElements(TestListener.dynamicDriver.get(), SearchResultPage.class);
 	}
 	
 	@Then("^Get the fares$")

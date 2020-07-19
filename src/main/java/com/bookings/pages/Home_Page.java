@@ -13,7 +13,7 @@ import com.booking.constants.Constants;
 
 public class Home_Page {
 
-	final WebDriver driver;
+    WebDriver driver;
 
 	@FindBy(how = How.XPATH, using = "//div[starts-with(@class,'autopop__wrap')]")
 	public WebElement signup;
@@ -56,6 +56,7 @@ public class Home_Page {
 	public void launchPortal()
 	{
 		driver.get(Constants.FLIGHT_BOOKING_PORTAL);
+		try {Thread.sleep(5000);} catch (InterruptedException e) {e.printStackTrace();}
 	}
 
 	public void source(String from)
