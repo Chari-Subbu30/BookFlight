@@ -9,16 +9,38 @@
     "line": 3,
     "elements": [
       {
+        "before": [
+          {
+            "result": {
+              "duration": 230300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeHook(Scenario)"
+            }
+          }
+        ],
         "line": 17,
-        "name": "Title of your scenario outline",
+        "name": "Booking a flight based on Source and Destionation",
         "description": "",
-        "id": "title-of-your-feature;title-of-your-scenario-outline;;2",
+        "id": "book-a-flight;booking-a-flight-based-on-source-and-destionation;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 49200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterHook(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 12613898000,
+              "duration": 7198461400,
               "status": "passed"
             },
             "line": 8,
@@ -30,7 +52,7 @@
           },
           {
             "result": {
-              "duration": 6545672900,
+              "duration": 13066721300,
               "status": "passed"
             },
             "line": 9,
@@ -51,7 +73,7 @@
           },
           {
             "result": {
-              "duration": 8045626000,
+              "duration": 12497949600,
               "status": "passed"
             },
             "line": 10,
@@ -72,7 +94,7 @@
           },
           {
             "result": {
-              "duration": 3628338000,
+              "duration": 5259812400,
               "status": "passed"
             },
             "line": 11,
@@ -84,7 +106,7 @@
           },
           {
             "result": {
-              "duration": 4498652900,
+              "duration": 519698000,
               "status": "passed"
             },
             "line": 12,
@@ -96,7 +118,7 @@
           },
           {
             "result": {
-              "duration": 4148044000,
+              "duration": 1103421800,
               "status": "passed"
             },
             "line": 13,
@@ -119,9 +141,9 @@
         ]
       }
     ],
-    "name": "Title of your feature",
-    "description": "I want to use this template for my feature file",
-    "id": "title-of-your-feature",
+    "name": "Book a flight",
+    "description": "I want to use this template for booking a flight",
+    "id": "book-a-flight",
     "keyword": "Feature",
     "uri": "Flight_Booking.feature",
     "tags": [

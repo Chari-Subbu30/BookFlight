@@ -30,6 +30,14 @@ public class SearchResultPage {
 	}
 
 	public void getFares(){
+		for(int i=1;i<=50;i++)
+		{
+			if(flight_vendors.size() > 0)
+			{
+				break;
+			}
+			try {Thread.sleep(1000);} catch (InterruptedException e) {e.printStackTrace();}
+		}
 		System.out.println("Available flights count: " + flight_vendors.size());
 		System.out.println("Available flights Details : Below");
 		boolean skipfirstrow = true;
@@ -52,12 +60,15 @@ public class SearchResultPage {
 	{
 		if(flight_vendors.size() > 1)
 		{
-			for(WebElement slot : time_slots)
+			if(time_slots.size() > 0)
 			{
-				if(slot.getText().contains("After") && slot.getText().contains("6") && slot.getText().contains("PM"))
+				for(WebElement slot : time_slots)
 				{
-					slot.click();
-					break;
+					if(slot.getText().contains("After") && slot.getText().contains("6") && slot.getText().contains("PM"))
+					{
+						slot.click();
+						break;
+					}
 				}
 			}
 		}
@@ -74,7 +85,7 @@ public class SearchResultPage {
 			if(!Btn_BookNow.isDisplayed())
 			{
 				Btn_View_Fares.click();
-				WebDriverWait wait = new WebDriverWait(driver,10);
+				WebDriverWait wait = new WebDriverWait(driver,30);
 				wait.until(ExpectedConditions.visibilityOf(Btn_BookNow));
 				Btn_BookNow.click();
 				break;

@@ -7,9 +7,9 @@ formatter.feature({
     }
   ],
   "line": 3,
-  "name": "Title of your feature",
-  "description": "I want to use this template for my feature file",
-  "id": "title-of-your-feature",
+  "name": "Book a flight",
+  "description": "I want to use this template for booking a flight",
+  "id": "book-a-flight",
   "keyword": "Feature",
   "tags": [
     {
@@ -20,9 +20,9 @@ formatter.feature({
 });
 formatter.scenarioOutline({
   "line": 7,
-  "name": "Title of your scenario outline",
+  "name": "Booking a flight based on Source and Destionation",
   "description": "",
-  "id": "title-of-your-feature;title-of-your-scenario-outline",
+  "id": "book-a-flight;booking-a-flight-based-on-source-and-destionation",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -66,7 +66,7 @@ formatter.examples({
   "line": 15,
   "name": "",
   "description": "",
-  "id": "title-of-your-feature;title-of-your-scenario-outline;",
+  "id": "book-a-flight;booking-a-flight-based-on-source-and-destionation;",
   "rows": [
     {
       "cells": [
@@ -74,7 +74,7 @@ formatter.examples({
         "Destination"
       ],
       "line": 16,
-      "id": "title-of-your-feature;title-of-your-scenario-outline;;1"
+      "id": "book-a-flight;booking-a-flight-based-on-source-and-destionation;;1"
     },
     {
       "cells": [
@@ -82,16 +82,20 @@ formatter.examples({
         "Bengaluru"
       ],
       "line": 17,
-      "id": "title-of-your-feature;title-of-your-scenario-outline;;2"
+      "id": "book-a-flight;booking-a-flight-based-on-source-and-destionation;;2"
     }
   ],
   "keyword": "Examples"
 });
+formatter.before({
+  "duration": 230300,
+  "status": "passed"
+});
 formatter.scenario({
   "line": 17,
-  "name": "Title of your scenario outline",
+  "name": "Booking a flight based on Source and Destionation",
   "description": "",
-  "id": "title-of-your-feature;title-of-your-scenario-outline;;2",
+  "id": "book-a-flight;booking-a-flight-based-on-source-and-destionation;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -145,7 +149,7 @@ formatter.match({
   "location": "HomePage_StepDefinitions.navigate_to_flight_booking_portal()"
 });
 formatter.result({
-  "duration": 12613898000,
+  "duration": 7198461400,
   "status": "passed"
 });
 formatter.match({
@@ -158,7 +162,7 @@ formatter.match({
   "location": "HomePage_StepDefinitions.user_enters_from_city(String)"
 });
 formatter.result({
-  "duration": 6545672900,
+  "duration": 13066721300,
   "status": "passed"
 });
 formatter.match({
@@ -171,28 +175,32 @@ formatter.match({
   "location": "HomePage_StepDefinitions.user_enters_destination_city(String)"
 });
 formatter.result({
-  "duration": 8045626000,
+  "duration": 12497949600,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePage_StepDefinitions.search_for_a_given_flight()"
 });
 formatter.result({
-  "duration": 3628338000,
+  "duration": 5259812400,
   "status": "passed"
 });
 formatter.match({
   "location": "ResultsPage_StepDefinition.get_the_fares()"
 });
 formatter.result({
-  "duration": 4498652900,
+  "duration": 519698000,
   "status": "passed"
 });
 formatter.match({
   "location": "ResultsPage_StepDefinition.selects_best_itinerary()"
 });
 formatter.result({
-  "duration": 4148044000,
+  "duration": 1103421800,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 49200,
   "status": "passed"
 });
 });

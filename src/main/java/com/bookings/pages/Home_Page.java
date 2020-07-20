@@ -32,7 +32,9 @@ public class Home_Page {
 	public WebElement textbox_from;
 
 	@FindBy(how = How.XPATH, using = "//ul[@role='listbox']/li")
-	public List<WebElement> cities;
+	public List<WebElement> from_cities;
+	@FindBy(how = How.XPATH, using = "//ul[@role='listbox']/li")
+	public List<WebElement> to_cities;
 
 	@FindBy(how = How.ID, using = "toCity")
 	public WebElement to_destination;
@@ -57,7 +59,9 @@ public class Home_Page {
 
 	public void launchPortal()
 	{
-		driver.get(Constants.FLIGHT_BOOKING_PORTAL);
+		try {
+			driver.get(Constants.FLIGHT_BOOKING_PORTAL);
+		}catch(Exception e) {System.out.println("Some times here getting exception");}
 		try {Thread.sleep(5000);} catch (InterruptedException e) {e.printStackTrace();}
 	}
 
@@ -72,20 +76,38 @@ public class Home_Page {
 		from_source.click();
 		textbox_from.sendKeys(from);
 		try {Thread.sleep(10000);} catch (InterruptedException e) {e.printStackTrace();}
-		cities.get(0).click();
+		for(int i=1;i<=50;i++)
+		{
+			if(from_cities.size() > 0)
+			{
+				from_cities.get(0).click();
+				break;
+			}
+			try {Thread.sleep(1000);} catch (InterruptedException e) {e.printStackTrace();}
+		}
 	}
 
 	public void destination(String destination)
 	{
 		try {
 			to_destination.click();
-		}catch(Exception e) {System.out.println("Some times here getting exception");}
+		}catch(Exception e) {System.out.println("Some times getting exception here - to_destination.click()");}
 		textbox_destination.sendKeys(destination);
 		try {Thread.sleep(10000);} catch (InterruptedException e) {e.printStackTrace();}
-		cities.get(0).click();
+
+		for(int i=1;i<=50;i++)
+		{
+			if(to_cities.size() > 0)
+			{
+				to_cities.get(0).click();
+				break;
+			}
+			try {Thread.sleep(1000);} catch (InterruptedException e) {e.printStackTrace();}
+		}
+
 		try {
 			defaurture_datePicker.click();
-		}catch(Exception e) {System.out.println("Some times here getting exception");}
+		}catch(Exception e) {System.out.println("Some times getting exception here - defaurture_datePicker.click();");}
 		defaurture_date.click();
 	}
 
